@@ -15,8 +15,10 @@ namespace LibraryManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new Auth());
-            Application.Run(new form.User());
+            //  Application.Run(new Auth());
+            Application.Run(new form.MainMenu());
+
         }
+
     }
 }

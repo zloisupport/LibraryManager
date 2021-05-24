@@ -1,20 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Windows.Forms;
 
 namespace LibraryManager.form
 {
-    public partial class User : Form
+
+    public partial class UserForm : Form
     {
-        public User()
+        AppDbContext db;
+        public string name;
+        int id = 1;
+        public UserForm()
         {
             InitializeComponent();
+            db = new AppDbContext();
+            db.Users.Load();
+
+
+            User user = db.Users.Find(id);
+            txtUserName.Text = user.Name;
+            name = user.Name;
         }
+
 
         private void chboxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
@@ -40,9 +48,55 @@ namespace LibraryManager.form
         {
 
         }
+
+        private void Save()
+        {
+            User user = db.Users.Find(id);
+
+            if (user.Id != id)
+            {
+                db.Users.Add(new User
+                {
+                    Name = txtUserName.Text,
+                    Password = txtPasswordTwo.Text
+                });
+                db.SaveChanges();
+            }
+            else
+            {
+                user.Name = txtUserName.Text;
+                user.Password = txtPasswordTwo.Text;
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                MessageBox.Show("Информация обновлена");
+            }
+        }
+
+
+        public static bool IsStringEmpty(string myString)
+        {
+            if (myString == null)
+                return true;
+            myString = myString.Trim();
+            return myString == String.Empty || myString.Length == 0;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+
+          
+            var i1 = IsStringEmpty(txtPasswordOne.Text);
+            var i2 = IsStringEmpty(txtPasswordTwo.Text);
+            if (i1 || i2 == true)
+            {
+                pnlLogin.Visible = true;
+            }
+            else
+            {
+                Save();
+            }
+           
         }
     }
 }

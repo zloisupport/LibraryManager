@@ -64,20 +64,83 @@
     <Compile Include="form\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Book.cs" />
+    <Compile Include="form\BookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\BookForm.Designer.cs">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\DeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\DeliveryForm.Designer.cs">
+      <DependentUpon>DeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\ListBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ListBookForm.Designer.cs">
+      <DependentUpon>ListBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\ListReaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ListReaderForm.Designer.cs">
+      <DependentUpon>ListReaderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\ReaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ReaderForm.Designer.cs">
+      <DependentUpon>ReaderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\User.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105231824397_addtableuser.cs" />
+    <Compile Include="Migrations\202105231824397_addtableuser.designer.cs">
+      <DependentUpon>202105231824397_addtableuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="form\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\BookForm.resx">
+      <DependentUpon>BookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\DeliveryForm.resx">
+      <DependentUpon>DeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\ListBookForm.resx">
+      <DependentUpon>ListBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\ListReaderForm.resx">
+      <DependentUpon>ListReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\ReaderForm.resx">
+      <DependentUpon>ReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\User.resx">
       <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105231824397_addtableuser.resx">
+      <DependentUpon>202105231824397_addtableuser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +154,7 @@
     </Compile>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Book.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +176,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_book_reading.ico" />
+    <None Include="icons\icons8_parcel_16.png" />
+    <None Include="icons\update_left_rotation_15px.png" />
+    <None Include="icons\help_15px.png" />
+    <None Include="icons\info_15px.png" />
+    <None Include="icons\settings_15px.png" />
+    <None Include="icons\exit_15px.png" />
+    <None Include="icons\icons8_book_reading_16.png" />
+    <None Include="icons\course_15px.png" />
+    <None Include="icons\address_book_2_15px.png" />
+    <None Include="icons\add_user_male_15px.png" />
+    <None Include="icons\icons8_add_user_male_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
