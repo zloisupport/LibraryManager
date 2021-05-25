@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_book_reading.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -46,7 +47,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="Delivery.cs" />
     <Compile Include="form\Auth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +88,12 @@
     <Compile Include="form\ListBookForm.Designer.cs">
       <DependentUpon>ListBookForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\ListDelivery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ListDelivery.Designer.cs">
+      <DependentUpon>ListDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\ListReaderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,13 +118,14 @@
     <Compile Include="form\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105231824397_addtableuser.cs" />
-    <Compile Include="Migrations\202105231824397_addtableuser.designer.cs">
-      <DependentUpon>202105231824397_addtableuser.cs</DependentUpon>
+    <Compile Include="Migrations\202105251106190_dsdasdasdassasd.cs" />
+    <Compile Include="Migrations\202105251106190_dsdasdasdassasd.designer.cs">
+      <DependentUpon>202105251106190_dsdasdasdassasd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reader.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="form\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
@@ -127,6 +139,9 @@
     <EmbeddedResource Include="form\ListBookForm.resx">
       <DependentUpon>ListBookForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\ListDelivery.resx">
+      <DependentUpon>ListDelivery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\ListReaderForm.resx">
       <DependentUpon>ListReaderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,8 +154,8 @@
     <EmbeddedResource Include="form\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105231824397_addtableuser.resx">
-      <DependentUpon>202105231824397_addtableuser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105251106190_dsdasdasdassasd.resx">
+      <DependentUpon>202105251106190_dsdasdasdassasd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -155,6 +170,8 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Book.datasource" />
+    <None Include="Properties\DataSources\Delivery.datasource" />
+    <None Include="Properties\DataSources\Reader.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,7 +192,6 @@
     <None Include="icons\admin_settings_male_50px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icons8_book_reading.ico" />
     <None Include="icons\icons8_parcel_16.png" />
     <None Include="icons\update_left_rotation_15px.png" />
     <None Include="icons\help_15px.png" />

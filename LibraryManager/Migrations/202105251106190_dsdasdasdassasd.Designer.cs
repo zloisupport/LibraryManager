@@ -7,13 +7,13 @@ namespace LibraryManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addtableuser : IMigrationMetadata
+    public sealed partial class dsdasdasdassasd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addtableuser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(dsdasdasdassasd));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105231824397_addtableuser"; }
+            get { return "202105251106190_dsdasdasdassasd"; }
         }
         
         string IMigrationMetadata.Source

@@ -13,5 +13,8 @@ namespace LibraryManager
         { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Reader> Readers { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Delivery> Deliveries { get; set; }
     }
 }

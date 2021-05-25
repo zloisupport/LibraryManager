@@ -45,20 +45,20 @@ namespace LibraryManager.form
             this.picCover = new System.Windows.Forms.PictureBox();
             this.btnPicClear = new System.Windows.Forms.Button();
             this.btnPicOpen = new System.Windows.Forms.Button();
-            this.dtpPublishDate = new System.Windows.Forms.DateTimePicker();
-            this.txtPublisher = new System.Windows.Forms.TextBox();
-            this.txtISBN = new System.Windows.Forms.TextBox();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.dtpDateBirth = new System.Windows.Forms.DateTimePicker();
+            this.txtPatronimicName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFistName = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.txtName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumberPhone = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnDelForm = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCover)).BeginInit();
             this.SuspendLayout();
@@ -200,43 +200,43 @@ namespace LibraryManager.form
             this.btnPicOpen.UseVisualStyleBackColor = true;
             this.btnPicOpen.Click += new System.EventHandler(this.btnPicOpen_Click);
             // 
-            // dtpPublishDate
+            // dtpDateBirth
             // 
-            this.dtpPublishDate.CustomFormat = "dd-M-y";
-            this.dtpPublishDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpPublishDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPublishDate.Location = new System.Drawing.Point(200, 188);
-            this.dtpPublishDate.MaxDate = new System.DateTime(2098, 12, 31, 0, 0, 0, 0);
-            this.dtpPublishDate.Name = "dtpPublishDate";
-            this.dtpPublishDate.Size = new System.Drawing.Size(250, 29);
-            this.dtpPublishDate.TabIndex = 30;
+            this.dtpDateBirth.CustomFormat = "dd-M-y";
+            this.dtpDateBirth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDateBirth.Location = new System.Drawing.Point(200, 188);
+            this.dtpDateBirth.MaxDate = new System.DateTime(2098, 12, 31, 0, 0, 0, 0);
+            this.dtpDateBirth.Name = "dtpDateBirth";
+            this.dtpDateBirth.Size = new System.Drawing.Size(250, 29);
+            this.dtpDateBirth.TabIndex = 30;
             // 
-            // txtPublisher
+            // txtPatronimicName
             // 
-            this.txtPublisher.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublisher.Location = new System.Drawing.Point(200, 138);
-            this.txtPublisher.Name = "txtPublisher";
-            this.txtPublisher.Size = new System.Drawing.Size(250, 29);
-            this.txtPublisher.TabIndex = 29;
-            this.toolTip1.SetToolTip(this.txtPublisher, "Publisher");
+            this.txtPatronimicName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatronimicName.Location = new System.Drawing.Point(200, 138);
+            this.txtPatronimicName.Name = "txtPatronimicName";
+            this.txtPatronimicName.Size = new System.Drawing.Size(250, 29);
+            this.txtPatronimicName.TabIndex = 29;
+            this.toolTip1.SetToolTip(this.txtPatronimicName, "Publisher");
             // 
-            // txtISBN
+            // txtLastName
             // 
-            this.txtISBN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtISBN.Location = new System.Drawing.Point(200, 88);
-            this.txtISBN.Name = "txtISBN";
-            this.txtISBN.Size = new System.Drawing.Size(250, 29);
-            this.txtISBN.TabIndex = 28;
-            this.toolTip1.SetToolTip(this.txtISBN, "ISBN");
+            this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(200, 88);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(250, 29);
+            this.txtLastName.TabIndex = 28;
+            this.toolTip1.SetToolTip(this.txtLastName, "ISBN");
             // 
-            // txtAuthor
+            // txtFistName
             // 
-            this.txtAuthor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAuthor.Location = new System.Drawing.Point(200, 38);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(250, 29);
-            this.txtAuthor.TabIndex = 27;
-            this.toolTip1.SetToolTip(this.txtAuthor, "Автор");
+            this.txtFistName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFistName.Location = new System.Drawing.Point(200, 38);
+            this.txtFistName.Name = "txtFistName";
+            this.txtFistName.Size = new System.Drawing.Size(250, 29);
+            this.txtFistName.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.txtFistName, "Автор");
             // 
             // txtName
             // 
@@ -246,14 +246,25 @@ namespace LibraryManager.form
             this.txtName.TabIndex = 26;
             this.toolTip1.SetToolTip(this.txtName, "Название");
             // 
-            // textBox1
+            // txtNumberPhone
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(200, 238);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 29);
-            this.textBox1.TabIndex = 46;
-            this.toolTip1.SetToolTip(this.textBox1, "Publisher");
+            this.txtNumberPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumberPhone.Location = new System.Drawing.Point(200, 238);
+            this.txtNumberPhone.Name = "txtNumberPhone";
+            this.txtNumberPhone.Size = new System.Drawing.Size(250, 29);
+            this.txtNumberPhone.TabIndex = 46;
+            this.toolTip1.SetToolTip(this.txtNumberPhone, "Publisher");
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(83, 401);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(91, 37);
+            this.btnSave.TabIndex = 52;
+            this.btnSave.Text = "Сохранить";
+            this.toolTip1.SetToolTip(this.btnSave, "save");
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelForm
             // 
@@ -265,14 +276,14 @@ namespace LibraryManager.form
             this.btnDelForm.Text = "Удалить";
             this.btnDelForm.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // txtAddress
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(200, 288);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 72);
-            this.textBox2.TabIndex = 47;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(200, 288);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(250, 72);
+            this.txtAddress.TabIndex = 47;
             // 
             // label7
             // 
@@ -311,28 +322,20 @@ namespace LibraryManager.form
             this.button2.TabIndex = 51;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(83, 401);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 37);
-            this.button3.TabIndex = 52;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ReaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtNumberPhone);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -345,10 +348,10 @@ namespace LibraryManager.form
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPicClear);
             this.Controls.Add(this.btnPicOpen);
-            this.Controls.Add(this.dtpPublishDate);
-            this.Controls.Add(this.txtPublisher);
-            this.Controls.Add(this.txtISBN);
-            this.Controls.Add(this.txtAuthor);
+            this.Controls.Add(this.dtpDateBirth);
+            this.Controls.Add(this.txtPatronimicName);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtFistName);
             this.Controls.Add(this.btnDelForm);
             this.Controls.Add(this.txtName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -379,19 +382,19 @@ namespace LibraryManager.form
         private System.Windows.Forms.Button btnPicClear;
         private System.Windows.Forms.Button btnPicOpen;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.DateTimePicker dtpPublishDate;
-        private System.Windows.Forms.TextBox txtPublisher;
-        private System.Windows.Forms.TextBox txtISBN;
-        private System.Windows.Forms.TextBox txtAuthor;
+        private System.Windows.Forms.DateTimePicker dtpDateBirth;
+        private System.Windows.Forms.TextBox txtPatronimicName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtFistName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Button btnDelForm;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNumberPhone;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSave;
     }
 }

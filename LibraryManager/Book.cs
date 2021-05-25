@@ -15,5 +15,7 @@ namespace LibraryManager
         public int? Amount { get; set; }
         public decimal? Price { get; set; }
 
+        public int? DeliveryId { get; set; }
+        public Delivery Delivery { get; set; }
     }
 }

@@ -104,6 +104,7 @@
             this.txtPasswordOne.Size = new System.Drawing.Size(198, 20);
             this.txtPasswordOne.TabIndex = 10;
             this.toolTipUser.SetToolTip(this.txtPasswordOne, "Пароль");
+            this.txtPasswordOne.UseSystemPasswordChar = true;
             // 
             // pictureBox1
             // 

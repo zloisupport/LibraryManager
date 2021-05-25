@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>H4sIAAAAAAAEAM1X227jRgx9L9B/EOapBbKeXF7aQN5FaidF0DgJVtl9pyXaGXQu6swotb+tD/2k/kI51tWSHTvBoigMGNaIPCSPDkn5n7/+jj+tlIxe0Dph9JidjU5ZhDo1mdDLMSv84sNP7NPH77+LrzO1ir7WdhfBjjy1G7Nn7/NLzl36jArcSInUGmcWfpQaxSEz/Pz09Gd+dsaRIBhhRVH8udBeKNxc0OXE6BRzX4CcmQylq87pTrJBje5BocshxTG7E3MLdj0DDUu0LLqSAiiLBOWCRaC18eApx8svDhNvjV4mOR2AfFrnSHYLkA6r3C9b82PLOD0PZfDWsYZKC+eNeiPg2UXFC++7v4td1vBGzF0Tw34dqt6wN2ZECNHVD3Q5kTYY9YkdBfOTaPvwpFEACSV8TqJJIX1hcayx8BbkSfRYzKVIf8P1k/kd9VgXUnbzoszo3tYBHT1ak6P168+4qLK9zVjEt/1437Fx6/iUtdxqf3HOonsKDnOJzWPv1J14Y/FX1GjBY/YI3qPVAQM3xA2i92KF7zoa6YzahUUzWN2hXvrnMaOfLLoRK8zqkyqDL1pQd5GTtwUeCvIIzv1pbPaNA8W8FcdQMtSMHgTxUiVxlefTeTjEld+hH9JJJSFXxdouqQRN0Hdk6FjUZlD27qiU5640m4TascDLuVDPD75ngMQzyHNirDNQqpMoKafJ5EPy9lZTJQZP3Y6Oa7JtIpHQqHl6dyk0ZXojrPNT8DCH8MwmmRqYbdG/h9o6VJfhfou1hNfW4XfpsaP1+/4tdTdUjaIm2RSGTQ7VgBm4bYY4SLA7mnViZKH0voZ/zbtsv65/eXI8QttbXZT2dIgU8x4DfYr5gOPeAOs/sNfE3jdpojei74k7roR2eIUOlFeasIgoehFZUF2ydh7VKBiMkj/kRAqqtzUgpYgFOl/OeEab7Ly3if8/W5E7l8kjVuN/vqREYPTgGhrssOP3kn4Bmz6D/UHB6scu0nt2zxvA3rZfhnPw8ALZuz9KJY9ZNjeUeJlgtXHeuVqGXRXz7utrPEUnli1EeJnVmAa5tqC1za1emJpnqqibUW3Sewwz9JARMVfWiwWknm6n6NzmNeAryIJMrtUcs1v9UPi88FfOoZrLrfeXmL8ef7M/t3OOH/Jw5b5FCZSmoBLwQf9SCJk1ed8M9bwPImikahLKil6DCG65bpDujT4SqKJvijnq0GJPqHJJYO5BJ/CC78mN5HWHS0jX9XDcD3L4QWzTHk8FLC0oV2G0/uEvGQ//yT7+CxecuJLFDQAA</value>
-  </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
-  </data>
+  <metadata name="ReaderId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="deliveryBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>190, 17</value>
+  </metadata>
+  <metadata name="deliveryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

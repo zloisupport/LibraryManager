@@ -40,12 +40,10 @@ namespace LibraryManager.form
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvBook = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.отчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmBookAllReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReaderAllReport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmExit = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmUser = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,8 +53,15 @@ namespace LibraryManager.form
             this.tsmReader = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListReader = new System.Windows.Forms.ToolStripMenuItem();
             this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.оToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tsmDeliveryList = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
@@ -91,7 +96,9 @@ namespace LibraryManager.form
             this.BookMenuStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmAddBook,
             this.tsmListBook,
-            this.tsmBookDelivery});
+            this.tsmBookDelivery,
+            this.отчетToolStripMenuItem,
+            this.tsmDeliveryList});
             this.BookMenuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookMenuStrip.Name = "BookMenuStrip";
             this.BookMenuStrip.Size = new System.Drawing.Size(64, 25);
@@ -101,7 +108,8 @@ namespace LibraryManager.form
             // 
             this.читателиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmReader,
-            this.tsmListReader});
+            this.tsmListReader,
+            this.отчетToolStripMenuItem1});
             this.читателиToolStripMenuItem.Name = "читателиToolStripMenuItem";
             this.читателиToolStripMenuItem.Size = new System.Drawing.Size(88, 25);
             this.читателиToolStripMenuItem.Text = "Читатель";
@@ -110,7 +118,7 @@ namespace LibraryManager.form
             // 
             this.оПрограммеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.обновитьToolStripMenuItem,
-            this.помощьToolStripMenuItem,
+            this.tsmHelp,
             this.оToolStripMenuItem});
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(83, 25);
@@ -141,6 +149,7 @@ namespace LibraryManager.form
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(284, 20);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvBook
             // 
@@ -160,6 +169,120 @@ namespace LibraryManager.form
             this.dgvBook.ReadOnly = true;
             this.dgvBook.Size = new System.Drawing.Size(577, 306);
             this.dgvBook.TabIndex = 0;
+            // 
+            // отчетToolStripMenuItem
+            // 
+            this.отчетToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmBookAllReport});
+            this.отчетToolStripMenuItem.Name = "отчетToolStripMenuItem";
+            this.отчетToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.отчетToolStripMenuItem.Text = "Отчет";
+            // 
+            // tsmBookAllReport
+            // 
+            this.tsmBookAllReport.Name = "tsmBookAllReport";
+            this.tsmBookAllReport.Size = new System.Drawing.Size(149, 26);
+            this.tsmBookAllReport.Text = "Все книги";
+            // 
+            // отчетToolStripMenuItem1
+            // 
+            this.отчетToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmReaderAllReport});
+            this.отчетToolStripMenuItem1.Name = "отчетToolStripMenuItem1";
+            this.отчетToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.отчетToolStripMenuItem1.Text = "Отчет";
+            // 
+            // tsmReaderAllReport
+            // 
+            this.tsmReaderAllReport.Name = "tsmReaderAllReport";
+            this.tsmReaderAllReport.Size = new System.Drawing.Size(173, 26);
+            this.tsmReaderAllReport.Text = "Все читатели";
+            // 
+            // tsmExit
+            // 
+            this.tsmExit.Image = global::LibraryManager.Properties.Resources.exit_15px;
+            this.tsmExit.Name = "tsmExit";
+            this.tsmExit.Size = new System.Drawing.Size(157, 26);
+            this.tsmExit.Text = "Выйти";
+            this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmUser});
+            this.настройкиToolStripMenuItem.Image = global::LibraryManager.Properties.Resources.settings_15px;
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            // 
+            // tsmUser
+            // 
+            this.tsmUser.Name = "tsmUser";
+            this.tsmUser.Size = new System.Drawing.Size(179, 26);
+            this.tsmUser.Text = "Пользователь";
+            this.tsmUser.Click += new System.EventHandler(this.tsmUser_Click);
+            // 
+            // tsmAddBook
+            // 
+            this.tsmAddBook.Image = global::LibraryManager.Properties.Resources.icons8_book_reading_16;
+            this.tsmAddBook.Name = "tsmAddBook";
+            this.tsmAddBook.Size = new System.Drawing.Size(199, 26);
+            this.tsmAddBook.Text = "Добавить";
+            this.tsmAddBook.Click += new System.EventHandler(this.tsmAddBook_Click);
+            // 
+            // tsmListBook
+            // 
+            this.tsmListBook.Image = global::LibraryManager.Properties.Resources.course_15px;
+            this.tsmListBook.Name = "tsmListBook";
+            this.tsmListBook.Size = new System.Drawing.Size(199, 26);
+            this.tsmListBook.Text = "Список";
+            this.tsmListBook.Click += new System.EventHandler(this.tsmListBook_Click_1);
+            // 
+            // tsmBookDelivery
+            // 
+            this.tsmBookDelivery.Image = global::LibraryManager.Properties.Resources.icons8_parcel_16;
+            this.tsmBookDelivery.Name = "tsmBookDelivery";
+            this.tsmBookDelivery.Size = new System.Drawing.Size(199, 26);
+            this.tsmBookDelivery.Text = "Выдача";
+            this.tsmBookDelivery.Click += new System.EventHandler(this.tsmBookDelivery_Click);
+            // 
+            // tsmReader
+            // 
+            this.tsmReader.Image = global::LibraryManager.Properties.Resources.add_user_male_15px;
+            this.tsmReader.Name = "tsmReader";
+            this.tsmReader.Size = new System.Drawing.Size(149, 26);
+            this.tsmReader.Text = "Добавить";
+            this.tsmReader.Click += new System.EventHandler(this.tsmReader_Click);
+            // 
+            // tsmListReader
+            // 
+            this.tsmListReader.Image = global::LibraryManager.Properties.Resources.address_book_2_15px;
+            this.tsmListReader.Name = "tsmListReader";
+            this.tsmListReader.Size = new System.Drawing.Size(149, 26);
+            this.tsmListReader.Text = "Список";
+            this.tsmListReader.Click += new System.EventHandler(this.tsmListBook_Click);
+            // 
+            // обновитьToolStripMenuItem
+            // 
+            this.обновитьToolStripMenuItem.Image = global::LibraryManager.Properties.Resources.update_left_rotation_15px;
+            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.обновитьToolStripMenuItem.Text = "Обновить";
+            // 
+            // tsmHelp
+            // 
+            this.tsmHelp.Image = global::LibraryManager.Properties.Resources.help_15px;
+            this.tsmHelp.Name = "tsmHelp";
+            this.tsmHelp.Size = new System.Drawing.Size(176, 26);
+            this.tsmHelp.Text = "Справка";
+            this.tsmHelp.Click += new System.EventHandler(this.tsmHelp_Click);
+            // 
+            // оToolStripMenuItem
+            // 
+            this.оToolStripMenuItem.Image = global::LibraryManager.Properties.Resources.info_15px;
+            this.оToolStripMenuItem.Name = "оToolStripMenuItem";
+            this.оToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+            this.оToolStripMenuItem.Text = "О программе";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -202,90 +325,12 @@ namespace LibraryManager.form
             // 
             this.bookBindingSource.DataSource = typeof(LibraryManager.Book);
             // 
-            // tsmExit
+            // tsmDeliveryList
             // 
-            this.tsmExit.Image = global::LibraryManager.Properties.Resources.exit_15px;
-            this.tsmExit.Name = "tsmExit";
-            this.tsmExit.Size = new System.Drawing.Size(157, 26);
-            this.tsmExit.Text = "Выйти";
-            this.tsmExit.Click += new System.EventHandler(this.tsmExit_Click);
-            // 
-            // настройкиToolStripMenuItem
-            // 
-            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmUser});
-            this.настройкиToolStripMenuItem.Image = global::LibraryManager.Properties.Resources.settings_15px;
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
-            // 
-            // tsmUser
-            // 
-            this.tsmUser.Name = "tsmUser";
-            this.tsmUser.Size = new System.Drawing.Size(179, 26);
-            this.tsmUser.Text = "Пользователь";
-            this.tsmUser.Click += new System.EventHandler(this.tsmUser_Click);
-            // 
-            // tsmAddBook
-            // 
-            this.tsmAddBook.Image = global::LibraryManager.Properties.Resources.icons8_book_reading_16;
-            this.tsmAddBook.Name = "tsmAddBook";
-            this.tsmAddBook.Size = new System.Drawing.Size(180, 26);
-            this.tsmAddBook.Text = "Добавить";
-            this.tsmAddBook.Click += new System.EventHandler(this.tsmAddBook_Click);
-            // 
-            // tsmListBook
-            // 
-            this.tsmListBook.Image = global::LibraryManager.Properties.Resources.course_15px;
-            this.tsmListBook.Name = "tsmListBook";
-            this.tsmListBook.Size = new System.Drawing.Size(180, 26);
-            this.tsmListBook.Text = "Список";
-            this.tsmListBook.Click += new System.EventHandler(this.tsmListBook_Click_1);
-            // 
-            // tsmBookDelivery
-            // 
-            this.tsmBookDelivery.Image = global::LibraryManager.Properties.Resources.icons8_parcel_16;
-            this.tsmBookDelivery.Name = "tsmBookDelivery";
-            this.tsmBookDelivery.Size = new System.Drawing.Size(180, 26);
-            this.tsmBookDelivery.Text = "Выдача";
-            this.tsmBookDelivery.Click += new System.EventHandler(this.tsmBookDelivery_Click);
-            // 
-            // tsmReader
-            // 
-            this.tsmReader.Image = global::LibraryManager.Properties.Resources.add_user_male_15px;
-            this.tsmReader.Name = "tsmReader";
-            this.tsmReader.Size = new System.Drawing.Size(149, 26);
-            this.tsmReader.Text = "Добавить";
-            this.tsmReader.Click += new System.EventHandler(this.tsmReader_Click);
-            // 
-            // tsmListReader
-            // 
-            this.tsmListReader.Image = global::LibraryManager.Properties.Resources.address_book_2_15px;
-            this.tsmListReader.Name = "tsmListReader";
-            this.tsmListReader.Size = new System.Drawing.Size(149, 26);
-            this.tsmListReader.Text = "Список";
-            this.tsmListReader.Click += new System.EventHandler(this.tsmListBook_Click);
-            // 
-            // обновитьToolStripMenuItem
-            // 
-            this.обновитьToolStripMenuItem.Image = global::LibraryManager.Properties.Resources.update_left_rotation_15px;
-            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.обновитьToolStripMenuItem.Text = "Обновить";
-            // 
-            // помощьToolStripMenuItem
-            // 
-            this.помощьToolStripMenuItem.Image = global::LibraryManager.Properties.Resources.help_15px;
-            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.помощьToolStripMenuItem.Text = "Справка";
-            // 
-            // оToolStripMenuItem
-            // 
-            this.оToolStripMenuItem.Image = global::LibraryManager.Properties.Resources.info_15px;
-            this.оToolStripMenuItem.Name = "оToolStripMenuItem";
-            this.оToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-            this.оToolStripMenuItem.Text = "О программе";
+            this.tsmDeliveryList.Name = "tsmDeliveryList";
+            this.tsmDeliveryList.Size = new System.Drawing.Size(199, 26);
+            this.tsmDeliveryList.Text = "Выданные книги";
+            this.tsmDeliveryList.Click += new System.EventHandler(this.tsmDeliveryList_Click);
             // 
             // MainMenu
             // 
@@ -300,6 +345,8 @@ namespace LibraryManager.form
             this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.Text = "Menu";
+            this.Activated += new System.EventHandler(this.MainMenu_Activated);
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -326,7 +373,7 @@ namespace LibraryManager.form
         private System.Windows.Forms.ToolStripMenuItem tsmListReader;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmHelp;
         private System.Windows.Forms.ToolStripMenuItem оToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvBook;
@@ -339,5 +386,10 @@ namespace LibraryManager.form
         private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn publisherDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem tsmBookDelivery;
+        private System.Windows.Forms.ToolStripMenuItem отчетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmBookAllReport;
+        private System.Windows.Forms.ToolStripMenuItem отчетToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmReaderAllReport;
+        private System.Windows.Forms.ToolStripMenuItem tsmDeliveryList;
     }
 }

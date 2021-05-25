@@ -36,8 +36,8 @@ namespace LibraryManager.form
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.txtISBN = new System.Windows.Forms.TextBox();
             this.txtPublisher = new System.Windows.Forms.TextBox();
-            this.dtpPublishDate = new System.Windows.Forms.DateTimePicker();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.dtpPublishDate = new System.Windows.Forms.DateTimePicker();
             this.picCover = new System.Windows.Forms.PictureBox();
             this.btnPicOpen = new System.Windows.Forms.Button();
             this.btnPicClear = new System.Windows.Forms.Button();
@@ -98,6 +98,18 @@ namespace LibraryManager.form
             this.txtPublisher.TabIndex = 3;
             this.toolTip1.SetToolTip(this.txtPublisher, "Publisher");
             // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(12, 369);
+            this.txtDescription.MaxLength = 3200767;
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(434, 159);
+            this.txtDescription.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.txtDescription, " Описание");
+            // 
             // dtpPublishDate
             // 
             this.dtpPublishDate.CustomFormat = "yyyy";
@@ -111,18 +123,6 @@ namespace LibraryManager.form
             this.dtpPublishDate.Size = new System.Drawing.Size(250, 29);
             this.dtpPublishDate.TabIndex = 4;
             // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(12, 369);
-            this.txtDescription.MaxLength = 3200767;
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDescription.Size = new System.Drawing.Size(434, 159);
-            this.txtDescription.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.txtDescription, " Описание");
-            // 
             // picCover
             // 
             this.picCover.ErrorImage = null;
@@ -130,6 +130,7 @@ namespace LibraryManager.form
             this.picCover.Location = new System.Drawing.Point(3, 3);
             this.picCover.Name = "picCover";
             this.picCover.Size = new System.Drawing.Size(159, 239);
+            this.picCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCover.TabIndex = 6;
             this.picCover.TabStop = false;
             // 
@@ -142,6 +143,7 @@ namespace LibraryManager.form
             this.btnPicOpen.TabIndex = 7;
             this.btnPicOpen.Text = ". . .";
             this.btnPicOpen.UseVisualStyleBackColor = true;
+            this.btnPicOpen.Click += new System.EventHandler(this.btnPicOpen_Click);
             // 
             // btnPicClear
             // 
@@ -152,6 +154,7 @@ namespace LibraryManager.form
             this.btnPicClear.TabIndex = 8;
             this.btnPicClear.Text = "Очиска";
             this.btnPicClear.UseVisualStyleBackColor = true;
+            this.btnPicClear.Click += new System.EventHandler(this.btnPicClear_Click);
             // 
             // panel1
             // 
@@ -183,6 +186,7 @@ namespace LibraryManager.form
             this.btnSaveForm.TabIndex = 13;
             this.btnSaveForm.Text = "Сохранить";
             this.btnSaveForm.UseVisualStyleBackColor = false;
+            this.btnSaveForm.Click += new System.EventHandler(this.btnSaveForm_Click);
             // 
             // btnClearForm
             // 
