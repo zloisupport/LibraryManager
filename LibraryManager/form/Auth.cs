@@ -17,6 +17,7 @@ namespace LibraryManager
         {
 
             InitializeComponent();
+
             this.MaximizeBox = false;
             this.pnlLogin.Visible = false;
             db = new AppDbContext();
@@ -101,5 +102,7 @@ namespace LibraryManager
                 AuthLogic();
             }
         }
+
+
     }
 }

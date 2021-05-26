@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FastReport;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,7 +115,16 @@ namespace LibraryManager.form
 
         private void MainMenu_Activated(object sender, EventArgs e)
         {
-           
+            try
+            {
+
+
+                dgvBook.DataSource = DataAccess.GetBooks();
+            }
+            catch
+            {
+
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -138,6 +148,52 @@ namespace LibraryManager.form
         {
             ListDelivery listDelivery = new ListDelivery();
             listDelivery.ShowDialog();
+        }
+
+        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvBook.SelectedRows.Count > 0)
+            {
+                using (AppDbContext db = new AppDbContext())
+                {
+                    int index = dgvBook.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dgvBook[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    DataAccess.GetBookId = id;
+                }
+                BookForm bookForm = new BookForm();
+                bookForm.ShowDialog();
+            }
+        }
+
+        private void tsmBookAllReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Report report = new Report();
+                report.Load(Environment.CurrentDirectory + @"\reports\book.frx");
+                report.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка создания отчета!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tsmReaderAllReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Report report = new Report();
+                report.Load(Environment.CurrentDirectory + @"\reports\reader.frx");
+                report.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка создания отчета!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

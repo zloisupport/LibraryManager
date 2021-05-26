@@ -19,8 +19,19 @@ namespace LibraryManager.form
 
 
             User user = db.Users.Find(id);
-            txtUserName.Text = user.Name;
-            name = user.Name;
+            if(user.Id ==0)
+            {
+                user.Name = "root";
+                user.Password = "root";
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
+            else
+            {
+                txtUserName.Text = user.Name;
+                name = user.Name;
+            }
+           
         }
 
 

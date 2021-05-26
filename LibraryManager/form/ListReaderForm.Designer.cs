@@ -38,7 +38,7 @@ namespace LibraryManager.form
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvReader = new System.Windows.Forms.DataGridView();
-            this.readerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDelivery = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +46,7 @@ namespace LibraryManager.form
             this.dateBithDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.readerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@ namespace LibraryManager.form
             // btnSelect
             // 
             this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.Location = new System.Drawing.Point(173, 237);
+            this.btnSelect.Location = new System.Drawing.Point(273, 237);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(120, 32);
             this.btnSelect.TabIndex = 1;
@@ -64,7 +65,7 @@ namespace LibraryManager.form
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(336, 237);
+            this.btnCancel.Location = new System.Drawing.Point(399, 237);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 32);
             this.btnCancel.TabIndex = 2;
@@ -89,6 +90,7 @@ namespace LibraryManager.form
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(217, 20);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // button4
             // 
@@ -128,12 +130,19 @@ namespace LibraryManager.form
             this.dgvReader.Location = new System.Drawing.Point(12, 46);
             this.dgvReader.Name = "dgvReader";
             this.dgvReader.ReadOnly = true;
-            this.dgvReader.Size = new System.Drawing.Size(436, 185);
+            this.dgvReader.Size = new System.Drawing.Size(518, 185);
             this.dgvReader.TabIndex = 0;
             // 
-            // readerBindingSource
+            // btnDelivery
             // 
-            this.readerBindingSource.DataSource = typeof(LibraryManager.Reader);
+            this.btnDelivery.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivery.Location = new System.Drawing.Point(147, 237);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(120, 32);
+            this.btnDelivery.TabIndex = 7;
+            this.btnDelivery.Text = "Выдать";
+            this.btnDelivery.UseVisualStyleBackColor = true;
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -185,11 +194,16 @@ namespace LibraryManager.form
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // readerBindingSource
+            // 
+            this.readerBindingSource.DataSource = typeof(LibraryManager.Reader);
+            // 
             // ListReaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 272);
+            this.ClientSize = new System.Drawing.Size(542, 272);
+            this.Controls.Add(this.btnDelivery);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.txtSearch);
@@ -203,7 +217,7 @@ namespace LibraryManager.form
             this.MinimizeBox = false;
             this.Name = "ListReaderForm";
             this.Text = "Список читателей";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListReaderForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ListReaderForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readerBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -227,5 +241,6 @@ namespace LibraryManager.form
         private System.Windows.Forms.DataGridViewTextBoxColumn dateBithDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnDelivery;
     }
 }

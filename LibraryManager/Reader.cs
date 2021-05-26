@@ -16,7 +16,11 @@ namespace LibraryManager
         public string Address { get; set; }
         public string Photo { get; set; }
 
-        public int? DeliveryId { get; set; }
-        public Delivery Delivery { get; set; }
+        public virtual ICollection<Delivery> Deliveries { get; set; }
+      
+        public override string ToString()
+        {
+            return FirstName;
+        }
     }
 }

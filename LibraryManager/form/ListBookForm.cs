@@ -34,7 +34,18 @@ namespace LibraryManager.form
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-           
+            if (dgvBook.SelectedRows.Count > 0)
+            {
+                using (AppDbContext db = new AppDbContext())
+                {
+                    int index = dgvBook.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dgvBook[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    DataAccess.GetBookId = id;
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -7,13 +7,13 @@ namespace LibraryManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class dsdasdasdassasd : IMigrationMetadata
+    public sealed partial class addtoBook_delivery : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dsdasdasdassasd));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addtoBook_delivery));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105251106190_dsdasdasdassasd"; }
+            get { return "202105251433224_addtoBook_delivery"; }
         }
         
         string IMigrationMetadata.Source

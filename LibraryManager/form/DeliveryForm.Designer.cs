@@ -77,6 +77,7 @@ namespace LibraryManager.form
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -115,6 +116,7 @@ namespace LibraryManager.form
             this.MinimizeBox = false;
             this.Name = "DeliveryForm";
             this.Text = "Выдачи";
+            this.Load += new System.EventHandler(this.DeliveryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -44,6 +44,7 @@ namespace LibraryManager.form
             this.tsmBookAllReport = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReaderAllReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDeliveryList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmExit = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmUser = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,13 +56,13 @@ namespace LibraryManager.form
             this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.оToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tsmDeliveryList = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
@@ -98,7 +99,8 @@ namespace LibraryManager.form
             this.tsmListBook,
             this.tsmBookDelivery,
             this.отчетToolStripMenuItem,
-            this.tsmDeliveryList});
+            this.tsmDeliveryList,
+            this.изменитьToolStripMenuItem});
             this.BookMenuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BookMenuStrip.Name = "BookMenuStrip";
             this.BookMenuStrip.Size = new System.Drawing.Size(64, 25);
@@ -183,20 +185,29 @@ namespace LibraryManager.form
             this.tsmBookAllReport.Name = "tsmBookAllReport";
             this.tsmBookAllReport.Size = new System.Drawing.Size(149, 26);
             this.tsmBookAllReport.Text = "Все книги";
+            this.tsmBookAllReport.Click += new System.EventHandler(this.tsmBookAllReport_Click);
             // 
             // отчетToolStripMenuItem1
             // 
             this.отчетToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmReaderAllReport});
             this.отчетToolStripMenuItem1.Name = "отчетToolStripMenuItem1";
-            this.отчетToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.отчетToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.отчетToolStripMenuItem1.Text = "Отчет";
             // 
             // tsmReaderAllReport
             // 
             this.tsmReaderAllReport.Name = "tsmReaderAllReport";
-            this.tsmReaderAllReport.Size = new System.Drawing.Size(173, 26);
+            this.tsmReaderAllReport.Size = new System.Drawing.Size(180, 26);
             this.tsmReaderAllReport.Text = "Все читатели";
+            this.tsmReaderAllReport.Click += new System.EventHandler(this.tsmReaderAllReport_Click);
+            // 
+            // tsmDeliveryList
+            // 
+            this.tsmDeliveryList.Name = "tsmDeliveryList";
+            this.tsmDeliveryList.Size = new System.Drawing.Size(199, 26);
+            this.tsmDeliveryList.Text = "Выданные книги";
+            this.tsmDeliveryList.Click += new System.EventHandler(this.tsmDeliveryList_Click);
             // 
             // tsmExit
             // 
@@ -250,7 +261,7 @@ namespace LibraryManager.form
             // 
             this.tsmReader.Image = global::LibraryManager.Properties.Resources.add_user_male_15px;
             this.tsmReader.Name = "tsmReader";
-            this.tsmReader.Size = new System.Drawing.Size(149, 26);
+            this.tsmReader.Size = new System.Drawing.Size(180, 26);
             this.tsmReader.Text = "Добавить";
             this.tsmReader.Click += new System.EventHandler(this.tsmReader_Click);
             // 
@@ -258,7 +269,7 @@ namespace LibraryManager.form
             // 
             this.tsmListReader.Image = global::LibraryManager.Properties.Resources.address_book_2_15px;
             this.tsmListReader.Name = "tsmListReader";
-            this.tsmListReader.Size = new System.Drawing.Size(149, 26);
+            this.tsmListReader.Size = new System.Drawing.Size(180, 26);
             this.tsmListReader.Text = "Список";
             this.tsmListReader.Click += new System.EventHandler(this.tsmListBook_Click);
             // 
@@ -283,6 +294,13 @@ namespace LibraryManager.form
             this.оToolStripMenuItem.Name = "оToolStripMenuItem";
             this.оToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.оToolStripMenuItem.Text = "О программе";
+            // 
+            // изменитьToolStripMenuItem
+            // 
+            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(199, 26);
+            this.изменитьToolStripMenuItem.Text = "Изменить";
+            this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -324,13 +342,6 @@ namespace LibraryManager.form
             // bookBindingSource
             // 
             this.bookBindingSource.DataSource = typeof(LibraryManager.Book);
-            // 
-            // tsmDeliveryList
-            // 
-            this.tsmDeliveryList.Name = "tsmDeliveryList";
-            this.tsmDeliveryList.Size = new System.Drawing.Size(199, 26);
-            this.tsmDeliveryList.Text = "Выданные книги";
-            this.tsmDeliveryList.Click += new System.EventHandler(this.tsmDeliveryList_Click);
             // 
             // MainMenu
             // 
@@ -391,5 +402,6 @@ namespace LibraryManager.form
         private System.Windows.Forms.ToolStripMenuItem отчетToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsmReaderAllReport;
         private System.Windows.Forms.ToolStripMenuItem tsmDeliveryList;
+        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
     }
 }

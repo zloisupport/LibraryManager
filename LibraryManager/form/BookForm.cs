@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,37 +17,118 @@ namespace LibraryManager.form
         AppDbContext db;
         OpenFileDialog ofd = new OpenFileDialog();
         bool isDefaultImage = true;
+
+        private bool _editMode = false;
+        public bool _addMode = false;
+        int id = DataAccess.GetBookId;
         public BookForm()
         {
             InitializeComponent();
             db = new AppDbContext();
             picCover.Image = new Bitmap(Application.StartupPath + "\\Images\\default.jpg");
             isDefaultImage = true;
+            logic();
         }
 
+
+
+        private void logic()
+        {
+            if (id != null & id != 0)
+            {
+                //MessageBox.Show(id.ToString());
+                //Reader reader = db.Readers.Find(id);
+                //txtFistName.Text = reader.FirstName;
+                //txtLastName.Text = reader.LastName;
+                //txtPatronimicName.Text = reader.Patronimic;
+                //dtpDateBirth.Value = reader.DateBith.Value;
+                //txtAddress.Text = reader.Address;
+
+                Book book = db.Books.Find(id);
+                txtName.Text = book.Name;
+                txtAuthor.Text = book.Author;
+                txtPublisher.Text = book.ISBN;
+                dtpPublishDate.Value = book.PublishDate.Value;
+                txtPublisher.Text = book.Publisher;
+                txtDescription.Text = book.Description;
+                txtPrice.Value = book.Price.Value;
+                txtAmount.Value = book.Amount.Value;
+                if(book.Cover != null) { 
+                    picCover.Image = new Bitmap(Application.StartupPath + "\\Images\\" + book.Cover.ToString());
+                }
+                else
+                {
+                    picCover.Image = new Bitmap(Application.StartupPath + "\\Images\\default.jpg");
+                }
+                _editMode = true;
+            }
+            else
+            {
+                _addMode = true;
+            }
+        }
 
         private void Save()
         {
-            Book book = new Book();
-            book.Name = txtName.Text;
-            book.Author = txtAuthor.Text;
-            book.Amount = Convert.ToInt32(txtAmount.Value);
-            book.PublishDate = dtpPublishDate.Value;
-            book.Description = txtDescription.Text;
-            book.ISBN = txtISBN.Text;
-            book.Publisher = txtPublisher.Text;
-            book.Price = Convert.ToDecimal(txtPrice.Value);
-            if (ofd.FileName != null)
+            if (_editMode)
             {
-                book.Cover = SaveImage(ofd.FileName);
+               
+                Book book = db.Books.Find(id);
+                book.Name = txtName.Text;
+                book.Author = txtAuthor.Text;
+                book.Amount = Convert.ToInt32(txtAmount.Value);
+                book.PublishDate = dtpPublishDate.Value;
+                book.Description = txtDescription.Text;
+                book.ISBN = txtISBN.Text;
+                book.Publisher = txtPublisher.Text;
+                book.Price = Convert.ToDecimal(txtPrice.Value);
+                if (!isDefaultImage)
+                {
+                    book.Cover = SaveImage(ofd.FileName);
+                }
+  
+                try { 
+                db.Entry(book).State = EntityState.Modified;
+                db.SaveChanges();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка сохранения!");
+                }
+             
             }
-            db.Books.Add(book);
-            db.SaveChanges();
-            this.Close();
+            if (_addMode)
+            {
+                try
+                {
+                    Book book = new Book();
+                    book.Name = txtName.Text;
+                    book.Author = txtAuthor.Text;
+                    book.Amount = Convert.ToInt32(txtAmount.Value);
+                    book.PublishDate = dtpPublishDate.Value;
+                    book.Description = txtDescription.Text;
+                    book.ISBN = txtISBN.Text;
+                    book.Publisher = txtPublisher.Text;
+                    book.Price = Convert.ToDecimal(txtPrice.Value);
+                    if (ofd.FileName != null)
+                    {
+                        book.Cover = SaveImage(ofd.FileName);
+                    }
+                    db.Books.Add(book);
+                    db.SaveChanges();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Объект не сохранен!");
+                }
+            }
         }
+
         private void btnSaveForm_Click(object sender, EventArgs e)
         {
-            if(txtName.Text != "")
+            if (txtName.Text != "")
             {
                 Save();
             }
@@ -54,7 +136,7 @@ namespace LibraryManager.form
             {
                 MessageBox.Show("Заполните все поля");
             }
-           
+
         }
 
         private void btnPicOpen_Click(object sender, EventArgs e)
@@ -83,8 +165,13 @@ namespace LibraryManager.form
 
         private void btnPicClear_Click(object sender, EventArgs e)
         {
-               picCover.Image = new Bitmap(Application.StartupPath + "\\Images\\default.jpg");
-               isDefaultImage = true;
+            picCover.Image = new Bitmap(Application.StartupPath + "\\Images\\default.jpg");
+            isDefaultImage = true;
+        }
+
+        private void BookForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DataAccess.GetBookId = 0;
         }
     }
 }

@@ -190,6 +190,7 @@
             this.MaximizeBox = false;
             this.Name = "Auth";
             this.Text = "Авторизация";
+          
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auth_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

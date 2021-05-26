@@ -42,9 +42,7 @@ namespace LibraryManager.form
             this.btnPicOpen = new System.Windows.Forms.Button();
             this.btnPicClear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDelForm = new System.Windows.Forms.Button();
             this.btnSaveForm = new System.Windows.Forms.Button();
-            this.btnClearForm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -165,17 +163,6 @@ namespace LibraryManager.form
             this.panel1.Size = new System.Drawing.Size(165, 245);
             this.panel1.TabIndex = 9;
             // 
-            // btnDelForm
-            // 
-            this.btnDelForm.BackColor = System.Drawing.Color.LightCoral;
-            this.btnDelForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelForm.Location = new System.Drawing.Point(358, 534);
-            this.btnDelForm.Name = "btnDelForm";
-            this.btnDelForm.Size = new System.Drawing.Size(98, 35);
-            this.btnDelForm.TabIndex = 12;
-            this.btnDelForm.Text = "Удалить";
-            this.btnDelForm.UseVisualStyleBackColor = false;
-            // 
             // btnSaveForm
             // 
             this.btnSaveForm.BackColor = System.Drawing.Color.Aquamarine;
@@ -187,17 +174,6 @@ namespace LibraryManager.form
             this.btnSaveForm.Text = "Сохранить";
             this.btnSaveForm.UseVisualStyleBackColor = false;
             this.btnSaveForm.Click += new System.EventHandler(this.btnSaveForm_Click);
-            // 
-            // btnClearForm
-            // 
-            this.btnClearForm.BackColor = System.Drawing.Color.Orange;
-            this.btnClearForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearForm.Location = new System.Drawing.Point(194, 534);
-            this.btnClearForm.Name = "btnClearForm";
-            this.btnClearForm.Size = new System.Drawing.Size(98, 35);
-            this.btnClearForm.TabIndex = 14;
-            this.btnClearForm.Text = "Очистить";
-            this.btnClearForm.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -327,9 +303,7 @@ namespace LibraryManager.form
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnClearForm);
             this.Controls.Add(this.btnSaveForm);
-            this.Controls.Add(this.btnDelForm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPicClear);
             this.Controls.Add(this.btnPicOpen);
@@ -345,6 +319,7 @@ namespace LibraryManager.form
             this.MinimizeBox = false;
             this.Name = "BookForm";
             this.Text = "Книга";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.picCover)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtAmount)).EndInit();
@@ -367,9 +342,7 @@ namespace LibraryManager.form
         private System.Windows.Forms.Button btnPicOpen;
         private System.Windows.Forms.Button btnPicClear;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDelForm;
         private System.Windows.Forms.Button btnSaveForm;
-        private System.Windows.Forms.Button btnClearForm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

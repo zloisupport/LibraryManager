@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dsdasdasdassasd : DbMigration
+    public partial class addtoBook_delivery : DbMigration
     {
         public override void Up()
         {
@@ -21,23 +21,24 @@
                         Description = c.String(),
                         Amount = c.Int(),
                         Price = c.Decimal(precision: 18, scale: 2),
-                        DeliveryId = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Deliveries", t => t.DeliveryId)
-                .Index(t => t.DeliveryId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Deliveries",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        BookId = c.Int(),
-                        ReaderId = c.Int(),
+                        ReaderId = c.Int(nullable: false),
+                        BookId = c.Int(nullable: false),
                         DateIssue = c.DateTime(),
                         DateReturn = c.DateTime(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Books", t => t.BookId, cascadeDelete: true)
+                .ForeignKey("dbo.Readers", t => t.ReaderId, cascadeDelete: true)
+                .Index(t => t.ReaderId)
+                .Index(t => t.BookId);
             
             CreateTable(
                 "dbo.Readers",
@@ -51,11 +52,8 @@
                         PhoneNumber = c.Int(),
                         Address = c.String(),
                         Photo = c.String(),
-                        DeliveryId = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Deliveries", t => t.DeliveryId)
-                .Index(t => t.DeliveryId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Users",
@@ -71,10 +69,10 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Readers", "DeliveryId", "dbo.Deliveries");
-            DropForeignKey("dbo.Books", "DeliveryId", "dbo.Deliveries");
-            DropIndex("dbo.Readers", new[] { "DeliveryId" });
-            DropIndex("dbo.Books", new[] { "DeliveryId" });
+            DropForeignKey("dbo.Deliveries", "ReaderId", "dbo.Readers");
+            DropForeignKey("dbo.Deliveries", "BookId", "dbo.Books");
+            DropIndex("dbo.Deliveries", new[] { "BookId" });
+            DropIndex("dbo.Deliveries", new[] { "ReaderId" });
             DropTable("dbo.Users");
             DropTable("dbo.Readers");
             DropTable("dbo.Deliveries");

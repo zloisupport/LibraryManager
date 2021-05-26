@@ -35,8 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>TextTemplate.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -44,6 +43,14 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2015.3.2.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\FastReports\FastReport.Net Demo\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Web, Version=2015.3.2.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\FastReports\FastReport.Net Demo\FastReport.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -118,9 +125,9 @@
     <Compile Include="form\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105251106190_dsdasdasdassasd.cs" />
-    <Compile Include="Migrations\202105251106190_dsdasdasdassasd.designer.cs">
-      <DependentUpon>202105251106190_dsdasdasdassasd.cs</DependentUpon>
+    <Compile Include="Migrations\202105251433224_addtoBook_delivery.cs" />
+    <Compile Include="Migrations\202105251433224_addtoBook_delivery.designer.cs">
+      <DependentUpon>202105251433224_addtoBook_delivery.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -154,8 +161,8 @@
     <EmbeddedResource Include="form\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105251106190_dsdasdasdassasd.resx">
-      <DependentUpon>202105251106190_dsdasdasdassasd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105251433224_addtoBook_delivery.resx">
+      <DependentUpon>202105251433224_addtoBook_delivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -203,6 +210,9 @@
     <None Include="icons\address_book_2_15px.png" />
     <None Include="icons\add_user_male_15px.png" />
     <None Include="icons\icons8_add_user_male_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextTemplate.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

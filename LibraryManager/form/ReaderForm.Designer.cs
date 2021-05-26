@@ -58,7 +58,6 @@ namespace LibraryManager.form
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCover)).BeginInit();
             this.SuspendLayout();
@@ -176,6 +175,7 @@ namespace LibraryManager.form
             this.picCover.Location = new System.Drawing.Point(3, 7);
             this.picCover.Name = "picCover";
             this.picCover.Size = new System.Drawing.Size(159, 190);
+            this.picCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCover.TabIndex = 6;
             this.picCover.TabStop = false;
             // 
@@ -186,8 +186,9 @@ namespace LibraryManager.form
             this.btnPicClear.Name = "btnPicClear";
             this.btnPicClear.Size = new System.Drawing.Size(78, 35);
             this.btnPicClear.TabIndex = 33;
-            this.btnPicClear.Text = "Очиска";
+            this.btnPicClear.Text = "Очистка";
             this.btnPicClear.UseVisualStyleBackColor = true;
+            this.btnPicClear.Click += new System.EventHandler(this.btnPicClear_Click);
             // 
             // btnPicOpen
             // 
@@ -311,18 +312,9 @@ namespace LibraryManager.form
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 37);
             this.button1.TabIndex = 50;
-            this.button1.Text = "button1";
+            this.button1.Text = "Выйти";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(212, 401);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 37);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ReaderForm
             // 
@@ -330,7 +322,6 @@ namespace LibraryManager.form
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 450);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -394,7 +385,6 @@ namespace LibraryManager.form
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSave;
     }
 }

@@ -20,6 +20,7 @@ namespace LibraryManager.form
         {
             using(AppDbContext db =new AppDbContext())
             {
+                
                 Delivery delivery = new Delivery();
                 delivery.BookId = DataAccess.GetBookId;
                 delivery.ReaderId = DataAccess.GetReaderId;
@@ -27,7 +28,25 @@ namespace LibraryManager.form
                 delivery.DateReturn = dateTimePicker2.Value;
                 db.Deliveries.Add(delivery);
                 db.SaveChanges();
+                MessageBox.Show("Успешно");
+                this.Close();
+                DataAccess.GetBookId = 0;
+                DataAccess.GetReaderId= 0;
+
             }
+        }
+
+        private void DeliveryForm_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            DataAccess.GetBookId = 0;
+            DataAccess.GetReaderId = 0;
         }
     }
 }
