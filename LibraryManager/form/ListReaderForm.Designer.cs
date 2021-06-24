@@ -38,6 +38,7 @@ namespace LibraryManager.form
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvReader = new System.Windows.Forms.DataGridView();
+            this.readerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDelivery = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,6 @@ namespace LibraryManager.form
             this.dateBithDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.readerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@ namespace LibraryManager.form
             // btnSelect
             // 
             this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.Location = new System.Drawing.Point(273, 237);
+            this.btnSelect.Location = new System.Drawing.Point(386, 372);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(120, 32);
             this.btnSelect.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace LibraryManager.form
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(399, 237);
+            this.btnCancel.Location = new System.Drawing.Point(512, 372);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 32);
             this.btnCancel.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace LibraryManager.form
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(12, 237);
+            this.btnDelete.Location = new System.Drawing.Point(125, 372);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(120, 32);
             this.btnDelete.TabIndex = 3;
@@ -88,14 +88,14 @@ namespace LibraryManager.form
             // 
             this.txtSearch.Location = new System.Drawing.Point(87, 15);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(217, 20);
+            this.txtSearch.Size = new System.Drawing.Size(479, 20);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(310, 10);
+            this.button4.Location = new System.Drawing.Point(598, 8);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(80, 30);
             this.button4.TabIndex = 5;
@@ -130,13 +130,18 @@ namespace LibraryManager.form
             this.dgvReader.Location = new System.Drawing.Point(12, 46);
             this.dgvReader.Name = "dgvReader";
             this.dgvReader.ReadOnly = true;
-            this.dgvReader.Size = new System.Drawing.Size(518, 185);
+            this.dgvReader.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvReader.Size = new System.Drawing.Size(713, 311);
             this.dgvReader.TabIndex = 0;
+            // 
+            // readerBindingSource
+            // 
+            this.readerBindingSource.DataSource = typeof(LibraryManager.Reader);
             // 
             // btnDelivery
             // 
             this.btnDelivery.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelivery.Location = new System.Drawing.Point(147, 237);
+            this.btnDelivery.Location = new System.Drawing.Point(260, 372);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(120, 32);
             this.btnDelivery.TabIndex = 7;
@@ -161,6 +166,7 @@ namespace LibraryManager.form
             // 
             // lastNameDataGridViewTextBoxColumn
             // 
+            this.lastNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
@@ -194,15 +200,11 @@ namespace LibraryManager.form
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // readerBindingSource
-            // 
-            this.readerBindingSource.DataSource = typeof(LibraryManager.Reader);
-            // 
             // ListReaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 272);
+            this.ClientSize = new System.Drawing.Size(752, 425);
             this.Controls.Add(this.btnDelivery);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
@@ -234,6 +236,7 @@ namespace LibraryManager.form
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource readerBindingSource;
         private System.Windows.Forms.DataGridView dgvReader;
+        private System.Windows.Forms.Button btnDelivery;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
@@ -241,6 +244,5 @@ namespace LibraryManager.form
         private System.Windows.Forms.DataGridViewTextBoxColumn dateBithDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnDelivery;
     }
 }

@@ -31,6 +31,7 @@ namespace LibraryManager.form
             {
 
             }
+            ContextMenu popupMenu = new ContextMenu();
         }
 
 
@@ -86,6 +87,7 @@ namespace LibraryManager.form
                     if (converted == false)
                         return;
                     DataAccess.GetBookId = id;
+
                 }
             }
           
@@ -194,6 +196,81 @@ namespace LibraryManager.form
             {
                 MessageBox.Show("Ошибка создания отчета!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void изменитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (dgvBook.SelectedRows.Count > 0)
+            {
+                using (AppDbContext db = new AppDbContext())
+                {
+                    int index = dgvBook.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dgvBook[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    DataAccess.GetBookId = id;
+                }
+                BookForm bookForm = new BookForm();
+                bookForm.ShowDialog();
+            }
+        }
+
+        private void dgvBook_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        private void tsmChange_Click(object sender, EventArgs e)
+        {
+            if (dgvBook.SelectedRows.Count > 0)
+            {
+                using (AppDbContext db = new AppDbContext())
+                {
+                    int index = dgvBook.SelectedRows[0].Index;
+                    int id = 0;
+                    bool converted = Int32.TryParse(dgvBook[0, index].Value.ToString(), out id);
+                    if (converted == false)
+                        return;
+                    DataAccess.GetBookId = id;
+                }
+                BookForm bookForm = new BookForm();
+                bookForm.ShowDialog();
+            }
+        }
+
+        private void tsmDel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы хотите удалить данную запись", "Внимание", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (dgvBook.SelectedRows.Count > 0)
+                {
+                    using (AppDbContext db = new AppDbContext())
+                    {
+                        int index = dgvBook.SelectedRows[0].Index;
+                        int Id = 0;
+                        bool converted = Int32.TryParse(dgvBook[0, index].Value.ToString(), out Id);
+                        if (converted == false)
+                            return;
+
+                        Book book = db.Books.Find(Id);
+                        db.Books.Remove(book);
+                        db.SaveChanges();
+
+                        MessageBox.Show("Объект удален");
+                        dgvBook.DataSource = DataAccess.GetBooks();
+                    }
+                }
+            }
+        }
+
+        private void возвращенныеКнигиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListReturnBook listReturnBook = new ListReturnBook();
+            listReturnBook.ShowDialog();
         }
     }
 }

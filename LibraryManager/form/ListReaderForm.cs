@@ -12,11 +12,13 @@ namespace LibraryManager.form
 {
     public partial class ListReaderForm : Form
     {
+        AppDbContext db;
         private bool deliverMode = false;
         public ListReaderForm()
         {
 
             InitializeComponent();
+            db = new AppDbContext();
             dgvReader.DataSource = DataAccess.GetReaders();
 
             if (DataAccess.GetBookId != 0)
@@ -51,12 +53,13 @@ namespace LibraryManager.form
                     if (converted == false)
                         return;
                     DataAccess.GetReaderId = id;
+                  
                 }
             }
 
             ReaderForm readerForm = new ReaderForm();
             readerForm.ShowDialog();
-
+    
         }
 
         private void ListReaderForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,8 +114,24 @@ namespace LibraryManager.form
                 if (converted == false)
                     return;
                 DataAccess.GetReaderId = id;
-                DeliveryForm deliveryForm = new DeliveryForm();
-                deliveryForm.ShowDialog();
+
+                Delivery delivery = new Delivery();
+                delivery.BookId = DataAccess.GetBookId;
+                delivery.ReaderId = DataAccess.GetReaderId;
+                delivery.DateIssue = DateTime.Now;
+
+                db.Deliveries.Add(delivery);
+                db.SaveChanges();
+                MessageBox.Show("Успешно");
+                this.Close();
+                DataAccess.GetBookId = 0;
+                DataAccess.GetReaderId = 0;
+
+
+
+
+
+                this.Close();
                 btnSelect.Enabled = false;
             }
         }

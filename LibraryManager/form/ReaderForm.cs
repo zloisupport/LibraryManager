@@ -51,7 +51,7 @@ namespace LibraryManager.form
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(ofd.FileName.ToString());
+               
                  picCover.Image = new Bitmap(ofd.FileName);
                 isDefaultImage = false;
             }
@@ -77,6 +77,7 @@ namespace LibraryManager.form
                     reader.PhoneNumber = Convert.ToInt32(txtNumberPhone.Text);
                     db.Entry(reader).State = EntityState.Modified;
                     db.SaveChanges();
+
                     MessageBox.Show("Объект обновлен");
                 }
                 catch

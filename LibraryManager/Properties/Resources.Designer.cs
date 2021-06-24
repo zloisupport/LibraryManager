@@ -103,6 +103,16 @@ namespace LibraryManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_property_32px {
+            get {
+                object obj = ResourceManager.GetObject("edit_property_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap exit_15px {
             get {
                 object obj = ResourceManager.GetObject("exit_15px", resourceCulture);
@@ -196,6 +206,16 @@ namespace LibraryManager.Properties {
         internal static System.Drawing.Bitmap warnin {
             get {
                 object obj = ResourceManager.GetObject("warnin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap waste_32px {
+            get {
+                object obj = ResourceManager.GetObject("waste_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

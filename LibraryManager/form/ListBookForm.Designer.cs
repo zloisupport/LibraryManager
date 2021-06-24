@@ -38,14 +38,13 @@ namespace LibraryManager.form
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.dgvBook = new System.Windows.Forms.DataGridView();
+            this.bookReturnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publisherDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.readerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateReturnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookReturnBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,16 +115,19 @@ namespace LibraryManager.form
             this.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.authorDataGridViewTextBoxColumn,
-            this.iSBNDataGridViewTextBoxColumn,
-            this.publisherDataGridViewTextBoxColumn});
-            this.dgvBook.DataSource = this.bookBindingSource;
+            this.readerDataGridViewTextBoxColumn,
+            this.bookDataGridViewTextBoxColumn,
+            this.dateReturnDataGridViewTextBoxColumn});
+            this.dgvBook.DataSource = this.bookReturnBindingSource;
             this.dgvBook.Location = new System.Drawing.Point(12, 45);
             this.dgvBook.Name = "dgvBook";
             this.dgvBook.ReadOnly = true;
             this.dgvBook.Size = new System.Drawing.Size(442, 244);
             this.dgvBook.TabIndex = 14;
+            // 
+            // bookReturnBindingSource
+            // 
+            this.bookReturnBindingSource.DataSource = typeof(LibraryManager.BookReturn);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -135,38 +137,29 @@ namespace LibraryManager.form
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // nameDataGridViewTextBoxColumn
+            // readerDataGridViewTextBoxColumn
             // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.readerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.readerDataGridViewTextBoxColumn.DataPropertyName = "Reader";
+            this.readerDataGridViewTextBoxColumn.HeaderText = "Ф И О";
+            this.readerDataGridViewTextBoxColumn.Name = "readerDataGridViewTextBoxColumn";
+            this.readerDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // authorDataGridViewTextBoxColumn
+            // bookDataGridViewTextBoxColumn
             // 
-            this.authorDataGridViewTextBoxColumn.DataPropertyName = "Author";
-            this.authorDataGridViewTextBoxColumn.HeaderText = "Автор";
-            this.authorDataGridViewTextBoxColumn.Name = "authorDataGridViewTextBoxColumn";
-            this.authorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.bookDataGridViewTextBoxColumn.DataPropertyName = "Book";
+            this.bookDataGridViewTextBoxColumn.HeaderText = "Название книги";
+            this.bookDataGridViewTextBoxColumn.Name = "bookDataGridViewTextBoxColumn";
+            this.bookDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bookDataGridViewTextBoxColumn.Width = 105;
             // 
-            // iSBNDataGridViewTextBoxColumn
+            // dateReturnDataGridViewTextBoxColumn
             // 
-            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
-            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
-            this.iSBNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // publisherDataGridViewTextBoxColumn
-            // 
-            this.publisherDataGridViewTextBoxColumn.DataPropertyName = "Publisher";
-            this.publisherDataGridViewTextBoxColumn.HeaderText = "Издатель";
-            this.publisherDataGridViewTextBoxColumn.Name = "publisherDataGridViewTextBoxColumn";
-            this.publisherDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataSource = typeof(LibraryManager.Book);
+            this.dateReturnDataGridViewTextBoxColumn.DataPropertyName = "DateReturn";
+            this.dateReturnDataGridViewTextBoxColumn.HeaderText = "Дата Возврата";
+            this.dateReturnDataGridViewTextBoxColumn.Name = "dateReturnDataGridViewTextBoxColumn";
+            this.dateReturnDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ListBookForm
             // 
@@ -188,7 +181,7 @@ namespace LibraryManager.form
             this.Opacity = 0.98D;
             this.Text = "Список книг";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookReturnBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,12 +195,11 @@ namespace LibraryManager.form
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.BindingSource bookBindingSource;
         private System.Windows.Forms.DataGridView dgvBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn authorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn publisherDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn readerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateReturnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bookReturnBindingSource;
     }
 }

@@ -37,13 +37,18 @@ namespace LibraryManager.form
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.readerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReaderFistName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateIssueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateReturnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).BeginInit();
@@ -61,13 +66,14 @@ namespace LibraryManager.form
             this.bookIdDataGridViewTextBoxColumn,
             this.ReaderFistName,
             this.bookDataGridViewTextBoxColumn,
-            this.dateIssueDataGridViewTextBoxColumn,
-            this.dateReturnDataGridViewTextBoxColumn});
+            this.dateIssueDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.deliveryBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 312);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(659, 309);
             this.dataGridView1.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -102,6 +108,60 @@ namespace LibraryManager.form
             this.dataGridViewTextBoxColumn5.HeaderText = "Читатель";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(30, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(267, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(315, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Поиск";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(552, 388);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(119, 34);
+            this.btnReturn.TabIndex = 4;
+            this.btnReturn.Text = "Возврат";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 388);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(105, 34);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "Назад";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(430, 388);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(105, 34);
+            this.btnDel.TabIndex = 6;
+            this.btnDel.Text = "Удалить";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Visible = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Reader";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Читатель";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -149,13 +209,6 @@ namespace LibraryManager.form
             this.dateIssueDataGridViewTextBoxColumn.Name = "dateIssueDataGridViewTextBoxColumn";
             this.dateIssueDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dateReturnDataGridViewTextBoxColumn
-            // 
-            this.dateReturnDataGridViewTextBoxColumn.DataPropertyName = "DateReturn";
-            this.dateReturnDataGridViewTextBoxColumn.HeaderText = "Дата возврата";
-            this.dateReturnDataGridViewTextBoxColumn.Name = "dateReturnDataGridViewTextBoxColumn";
-            this.dateReturnDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // deliveryBindingSource
             // 
             this.deliveryBindingSource.DataSource = typeof(LibraryManager.Delivery);
@@ -164,7 +217,12 @@ namespace LibraryManager.form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 341);
+            this.ClientSize = new System.Drawing.Size(683, 434);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -175,6 +233,7 @@ namespace LibraryManager.form
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -187,14 +246,19 @@ namespace LibraryManager.form
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn readerIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReaderFistName;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateIssueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateReturnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="update_left_rotation_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\update_left_rotation_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="address_book_2_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\address_book_2_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,22 +139,31 @@
   <data name="icons8_book_reading_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\icons8_book_reading_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_parcel_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\icons8_parcel_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="info_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\info_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_500px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\user_500px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="update_left_rotation_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\update_left_rotation_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\settings_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user_500px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\user_500px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="warnin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\warnin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="waste_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\waste_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help_15px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\help_15px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_parcel_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\icons8_parcel_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_property_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_property_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

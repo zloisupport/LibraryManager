@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="BookReturn.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Delivery.cs" />
     <Compile Include="form\Auth.cs">
@@ -107,6 +108,12 @@
     <Compile Include="form\ListReaderForm.Designer.cs">
       <DependentUpon>ListReaderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\ListReturnBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\ListReturnBook.Designer.cs">
+      <DependentUpon>ListReturnBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,9 +132,9 @@
     <Compile Include="form\User.Designer.cs">
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105251433224_addtoBook_delivery.cs" />
-    <Compile Include="Migrations\202105251433224_addtoBook_delivery.designer.cs">
-      <DependentUpon>202105251433224_addtoBook_delivery.cs</DependentUpon>
+    <Compile Include="Migrations\202106031850318_addBookReturn.cs" />
+    <Compile Include="Migrations\202106031850318_addBookReturn.designer.cs">
+      <DependentUpon>202106031850318_addBookReturn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -152,6 +159,9 @@
     <EmbeddedResource Include="form\ListReaderForm.resx">
       <DependentUpon>ListReaderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\ListReturnBook.resx">
+      <DependentUpon>ListReturnBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,8 +171,8 @@
     <EmbeddedResource Include="form\User.resx">
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105251433224_addtoBook_delivery.resx">
-      <DependentUpon>202105251433224_addtoBook_delivery.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106031850318_addBookReturn.resx">
+      <DependentUpon>202106031850318_addBookReturn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,6 +187,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Book.datasource" />
+    <None Include="Properties\DataSources\BookReturn.datasource" />
     <None Include="Properties\DataSources\Delivery.datasource" />
     <None Include="Properties\DataSources\Reader.datasource" />
     <None Include="Properties\Settings.settings">
@@ -212,8 +223,11 @@
     <None Include="icons\icons8_add_user_male_32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\waste_32px.png" />
+    <None Include="Resources\edit_property_32px.png" />
     <Content Include="TextTemplate.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

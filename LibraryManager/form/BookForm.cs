@@ -50,6 +50,7 @@ namespace LibraryManager.form
                 txtPublisher.Text = book.ISBN;
                 dtpPublishDate.Value = book.PublishDate.Value;
                 txtPublisher.Text = book.Publisher;
+                txtISBN.Text = book.ISBN;
                 txtDescription.Text = book.Description;
                 txtPrice.Value = book.Price.Value;
                 txtAmount.Value = book.Amount.Value;
@@ -145,7 +146,6 @@ namespace LibraryManager.form
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(ofd.FileName.ToString());
                 picCover.Image = new Bitmap(ofd.FileName);
                 isDefaultImage = false;
             }

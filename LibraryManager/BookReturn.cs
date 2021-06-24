@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LibraryManager
 {
-    public class Delivery
+    public class BookReturn
     {
         public int Id { get; set; }
 
@@ -15,7 +15,7 @@ namespace LibraryManager
         public int BookId { get; set; }
         public virtual Book Book { get; set; }
 
-        public DateTime? DateIssue { get; set; }
-   
+        public DateTime? DateReturn { get; set; }
+
     }
 }

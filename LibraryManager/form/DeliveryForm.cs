@@ -25,7 +25,7 @@ namespace LibraryManager.form
                 delivery.BookId = DataAccess.GetBookId;
                 delivery.ReaderId = DataAccess.GetReaderId;
                 delivery.DateIssue = dateTimePicker1.Value;
-                delivery.DateReturn = dateTimePicker2.Value;
+               
                 db.Deliveries.Add(delivery);
                 db.SaveChanges();
                 MessageBox.Show("Успешно");

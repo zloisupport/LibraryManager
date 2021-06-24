@@ -17,10 +17,12 @@ namespace LibraryManager
         public string Photo { get; set; }
 
         public virtual ICollection<Delivery> Deliveries { get; set; }
-      
+        public virtual ICollection<BookReturn> BookReturns { get; set; }
+
+
         public override string ToString()
         {
-            return FirstName;
+            return FirstName+ " " + LastName;
         }
     }
 }
